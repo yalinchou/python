@@ -1,0 +1,601 @@
+Help on module shutil:
+
+NNAAMMEE
+    shutil - Utility functions for copying and archiving files and directory trees.
+
+DDEESSCCRRIIPPTTIIOONN
+    XXX The functions here don't copy the resource fork or other metadata on Mac.
+
+CCLLAASSSSEESS
+    builtins.OSError(builtins.Exception)
+        Error
+            SameFileError
+        ExecError
+        SpecialFileError
+    
+    class EErrrroorr(builtins.OSError)
+     |  Base class for I/O related errors.
+     |  
+     |  Method resolution order:
+     |      Error
+     |      builtins.OSError
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      builtins.object
+     |  
+     |  Data descriptors defined here:
+     |  
+     |  ____wweeaakkrreeff____
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.OSError:
+     |  
+     |  ____iinniitt____(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |  
+     |  ____nneeww____(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |  
+     |  ____rreedduuccee____(...)
+     |      helper for pickle
+     |  
+     |  ____ssttrr____(self, /)
+     |      Return str(self).
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.OSError:
+     |  
+     |  cchhaarraacctteerrss__wwrriitttteenn
+     |  
+     |  eerrrrnnoo
+     |      POSIX exception code
+     |  
+     |  ffiilleennaammee
+     |      exception filename
+     |  
+     |  ffiilleennaammee22
+     |      second exception filename
+     |  
+     |  ssttrreerrrroorr
+     |      exception strerror
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |  
+     |  ____ddeellaattttrr____(self, name, /)
+     |      Implement delattr(self, name).
+     |  
+     |  ____ggeettaattttrriibbuuttee____(self, name, /)
+     |      Return getattr(self, name).
+     |  
+     |  ____rreepprr____(self, /)
+     |      Return repr(self).
+     |  
+     |  ____sseettaattttrr____(self, name, value, /)
+     |      Implement setattr(self, name, value).
+     |  
+     |  ____sseettssttaattee____(...)
+     |  
+     |  wwiitthh__ttrraacceebbaacckk(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |  
+     |  ____ccaauussee____
+     |      exception cause
+     |  
+     |  ____ccoonntteexxtt____
+     |      exception context
+     |  
+     |  ____ddiicctt____
+     |  
+     |  ____ssuupppprreessss__ccoonntteexxtt____
+     |  
+     |  ____ttrraacceebbaacckk____
+     |  
+     |  aarrggss
+    
+    class EExxeeccEErrrroorr(builtins.OSError)
+     |  Raised when a command could not be executed
+     |  
+     |  Method resolution order:
+     |      ExecError
+     |      builtins.OSError
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      builtins.object
+     |  
+     |  Data descriptors defined here:
+     |  
+     |  ____wweeaakkrreeff____
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.OSError:
+     |  
+     |  ____iinniitt____(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |  
+     |  ____nneeww____(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |  
+     |  ____rreedduuccee____(...)
+     |      helper for pickle
+     |  
+     |  ____ssttrr____(self, /)
+     |      Return str(self).
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.OSError:
+     |  
+     |  cchhaarraacctteerrss__wwrriitttteenn
+     |  
+     |  eerrrrnnoo
+     |      POSIX exception code
+     |  
+     |  ffiilleennaammee
+     |      exception filename
+     |  
+     |  ffiilleennaammee22
+     |      second exception filename
+     |  
+     |  ssttrreerrrroorr
+     |      exception strerror
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |  
+     |  ____ddeellaattttrr____(self, name, /)
+     |      Implement delattr(self, name).
+     |  
+     |  ____ggeettaattttrriibbuuttee____(self, name, /)
+     |      Return getattr(self, name).
+     |  
+     |  ____rreepprr____(self, /)
+     |      Return repr(self).
+     |  
+     |  ____sseettaattttrr____(self, name, value, /)
+     |      Implement setattr(self, name, value).
+     |  
+     |  ____sseettssttaattee____(...)
+     |  
+     |  wwiitthh__ttrraacceebbaacckk(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |  
+     |  ____ccaauussee____
+     |      exception cause
+     |  
+     |  ____ccoonntteexxtt____
+     |      exception context
+     |  
+     |  ____ddiicctt____
+     |  
+     |  ____ssuupppprreessss__ccoonntteexxtt____
+     |  
+     |  ____ttrraacceebbaacckk____
+     |  
+     |  aarrggss
+    
+    class SSaammeeFFiilleeEErrrroorr(Error)
+     |  Raised when source and destination are the same file.
+     |  
+     |  Method resolution order:
+     |      SameFileError
+     |      Error
+     |      builtins.OSError
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      builtins.object
+     |  
+     |  Data descriptors inherited from Error:
+     |  
+     |  ____wweeaakkrreeff____
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.OSError:
+     |  
+     |  ____iinniitt____(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |  
+     |  ____nneeww____(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |  
+     |  ____rreedduuccee____(...)
+     |      helper for pickle
+     |  
+     |  ____ssttrr____(self, /)
+     |      Return str(self).
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.OSError:
+     |  
+     |  cchhaarraacctteerrss__wwrriitttteenn
+     |  
+     |  eerrrrnnoo
+     |      POSIX exception code
+     |  
+     |  ffiilleennaammee
+     |      exception filename
+     |  
+     |  ffiilleennaammee22
+     |      second exception filename
+     |  
+     |  ssttrreerrrroorr
+     |      exception strerror
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |  
+     |  ____ddeellaattttrr____(self, name, /)
+     |      Implement delattr(self, name).
+     |  
+     |  ____ggeettaattttrriibbuuttee____(self, name, /)
+     |      Return getattr(self, name).
+     |  
+     |  ____rreepprr____(self, /)
+     |      Return repr(self).
+     |  
+     |  ____sseettaattttrr____(self, name, value, /)
+     |      Implement setattr(self, name, value).
+     |  
+     |  ____sseettssttaattee____(...)
+     |  
+     |  wwiitthh__ttrraacceebbaacckk(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |  
+     |  ____ccaauussee____
+     |      exception cause
+     |  
+     |  ____ccoonntteexxtt____
+     |      exception context
+     |  
+     |  ____ddiicctt____
+     |  
+     |  ____ssuupppprreessss__ccoonntteexxtt____
+     |  
+     |  ____ttrraacceebbaacckk____
+     |  
+     |  aarrggss
+    
+    class SSppeecciiaallFFiilleeEErrrroorr(builtins.OSError)
+     |  Raised when trying to do a kind of operation (e.g. copying) which is
+     |  not supported on a special file (e.g. a named pipe)
+     |  
+     |  Method resolution order:
+     |      SpecialFileError
+     |      builtins.OSError
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      builtins.object
+     |  
+     |  Data descriptors defined here:
+     |  
+     |  ____wweeaakkrreeff____
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.OSError:
+     |  
+     |  ____iinniitt____(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |  
+     |  ____nneeww____(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |  
+     |  ____rreedduuccee____(...)
+     |      helper for pickle
+     |  
+     |  ____ssttrr____(self, /)
+     |      Return str(self).
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.OSError:
+     |  
+     |  cchhaarraacctteerrss__wwrriitttteenn
+     |  
+     |  eerrrrnnoo
+     |      POSIX exception code
+     |  
+     |  ffiilleennaammee
+     |      exception filename
+     |  
+     |  ffiilleennaammee22
+     |      second exception filename
+     |  
+     |  ssttrreerrrroorr
+     |      exception strerror
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |  
+     |  ____ddeellaattttrr____(self, name, /)
+     |      Implement delattr(self, name).
+     |  
+     |  ____ggeettaattttrriibbuuttee____(self, name, /)
+     |      Return getattr(self, name).
+     |  
+     |  ____rreepprr____(self, /)
+     |      Return repr(self).
+     |  
+     |  ____sseettaattttrr____(self, name, value, /)
+     |      Implement setattr(self, name, value).
+     |  
+     |  ____sseettssttaattee____(...)
+     |  
+     |  wwiitthh__ttrraacceebbaacckk(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |  
+     |  ____ccaauussee____
+     |      exception cause
+     |  
+     |  ____ccoonntteexxtt____
+     |      exception context
+     |  
+     |  ____ddiicctt____
+     |  
+     |  ____ssuupppprreessss__ccoonntteexxtt____
+     |  
+     |  ____ttrraacceebbaacckk____
+     |  
+     |  aarrggss
+
+FFUUNNCCTTIIOONNSS
+    cchhoowwnn(path, user=None, group=None)
+        Change owner user and group of the given path.
+        
+        user and group can be the uid/gid or the user/group names, and in that case,
+        they are converted to their respective uid/gid.
+    
+    ccooppyy(src, dst, *, follow_symlinks=True)
+        Copy data and mode bits ("cp src dst"). Return the file's destination.
+        
+        The destination may be a directory.
+        
+        If follow_symlinks is false, symlinks won't be followed. This
+        resembles GNU's "cp -P src dst".
+        
+        If source and destination are the same file, a SameFileError will be
+        raised.
+    
+    ccooppyy22(src, dst, *, follow_symlinks=True)
+        Copy data and metadata. Return the file's destination.
+        
+        Metadata is copied with copystat(). Please see the copystat function
+        for more information.
+        
+        The destination may be a directory.
+        
+        If follow_symlinks is false, symlinks won't be followed. This
+        resembles GNU's "cp -P src dst".
+    
+    ccooppyyffiillee(src, dst, *, follow_symlinks=True)
+        Copy data from src to dst.
+        
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+    ccooppyyffiilleeoobbjj(fsrc, fdst, length=16384)
+        copy data from file-like object fsrc to file-like object fdst
+    
+    ccooppyymmooddee(src, dst, *, follow_symlinks=True)
+        Copy mode bits from src to dst.
+        
+        If follow_symlinks is not set, symlinks aren't followed if and only
+        if both `src` and `dst` are symlinks.  If `lchmod` isn't available
+        (e.g. Linux) this method does nothing.
+    
+    ccooppyyssttaatt(src, dst, *, follow_symlinks=True)
+        Copy file metadata
+        
+        Copy the permission bits, last access time, last modification time, and
+        flags from `src` to `dst`. On Linux, copystat() also copies the "extended
+        attributes" where possible. The file contents, owner, and group are
+        unaffected. `src` and `dst` are path names given as strings.
+        
+        If the optional flag `follow_symlinks` is not set, symlinks aren't
+        followed if and only if both `src` and `dst` are symlinks.
+    
+    ccooppyyttrreeee(src, dst, symlinks=False, ignore=None, copy_function=<function copy2 at 0x7f8c66b6dc80>, ignore_dangling_symlinks=False)
+        Recursively copy a directory tree.
+        
+        The destination directory must not already exist.
+        If exception(s) occur, an Error is raised with a list of reasons.
+        
+        If the optional symlinks flag is true, symbolic links in the
+        source tree result in symbolic links in the destination tree; if
+        it is false, the contents of the files pointed to by symbolic
+        links are copied. If the file pointed by the symlink doesn't
+        exist, an exception will be added in the list of errors raised in
+        an Error exception at the end of the copy process.
+        
+        You can set the optional ignore_dangling_symlinks flag to true if you
+        want to silence this exception. Notice that this has no effect on
+        platforms that don't support os.symlink.
+        
+        The optional ignore argument is a callable. If given, it
+        is called with the `src` parameter, which is the directory
+        being visited by copytree(), and `names` which is the list of
+        `src` contents, as returned by os.listdir():
+        
+            callable(src, names) -> ignored_names
+        
+        Since copytree() is called recursively, the callable will be
+        called once for each directory that is copied. It returns a
+        list of names relative to the `src` directory that should
+        not be copied.
+        
+        The optional copy_function argument is a callable that will be used
+        to copy each file. It will be called with the source path and the
+        destination path as arguments. By default, copy2() is used, but any
+        function that supports the same signature (like copy()) can be used.
+    
+    ddiisskk__uussaaggee(path)
+        Return disk usage statistics about the given path.
+        
+        Returned value is a named tuple with attributes 'total', 'used' and
+        'free', which are the amount of total, used and free space, in bytes.
+    
+    ggeett__aarrcchhiivvee__ffoorrmmaattss()
+        Returns a list of supported formats for archiving and unarchiving.
+        
+        Each element of the returned sequence is a tuple (name, description)
+    
+    ggeett__tteerrmmiinnaall__ssiizzee(fallback=(80, 24))
+        Get the size of the terminal window.
+        
+        For each of the two dimensions, the environment variable, COLUMNS
+        and LINES respectively, is checked. If the variable is defined and
+        the value is a positive integer, it is used.
+        
+        When COLUMNS or LINES is not defined, which is the common case,
+        the terminal connected to sys.__stdout__ is queried
+        by invoking os.get_terminal_size.
+        
+        If the terminal size cannot be successfully queried, either because
+        the system doesn't support querying, or because we are not
+        connected to a terminal, the value given in fallback parameter
+        is used. Fallback defaults to (80, 24) which is the default
+        size used by many terminal emulators.
+        
+        The value returned is a named tuple of type os.terminal_size.
+    
+    ggeett__uunnppaacckk__ffoorrmmaattss()
+        Returns a list of supported formats for unpacking.
+        
+        Each element of the returned sequence is a tuple
+        (name, extensions, description)
+    
+    iiggnnoorree__ppaatttteerrnnss(*patterns)
+        Function that can be used as copytree() ignore parameter.
+        
+        Patterns is a sequence of glob-style patterns
+        that are used to exclude files
+    
+    mmaakkee__aarrcchhiivvee(base_name, format, root_dir=None, base_dir=None, verbose=0, dry_run=0, owner=None, group=None, logger=None)
+        Create an archive file (eg. zip or tar).
+        
+        'base_name' is the name of the file to create, minus any format-specific
+        extension; 'format' is the archive format: one of "zip", "tar", "gztar",
+        "bztar", or "xztar".  Or any other registered format.
+        
+        'root_dir' is a directory that will be the root directory of the
+        archive; ie. we typically chdir into 'root_dir' before creating the
+        archive.  'base_dir' is the directory where we start archiving from;
+        ie. 'base_dir' will be the common prefix of all files and
+        directories in the archive.  'root_dir' and 'base_dir' both default
+        to the current directory.  Returns the name of the archive file.
+        
+        'owner' and 'group' are used when creating a tar archive. By default,
+        uses the current owner and group.
+    
+    mmoovvee(src, dst, copy_function=<function copy2 at 0x7f8c66b6dc80>)
+        Recursively move a file or directory to another location. This is
+        similar to the Unix "mv" command. Return the file or directory's
+        destination.
+        
+        If the destination is a directory or a symlink to a directory, the source
+        is moved inside the directory. The destination path must not already
+        exist.
+        
+        If the destination already exists but is not a directory, it may be
+        overwritten depending on os.rename() semantics.
+        
+        If the destination is on our current filesystem, then rename() is used.
+        Otherwise, src is copied to the destination and then removed. Symlinks are
+        recreated under the new name if os.rename() fails because of cross
+        filesystem renames.
+        
+        The optional `copy_function` argument is a callable that will be used
+        to copy the source or it will be delegated to `copytree`.
+        By default, copy2() is used, but any function that supports the same
+        signature (like copy()) can be used.
+        
+        A lot more could be done here...  A look at a mv.c shows a lot of
+        the issues this implementation glosses over.
+    
+    rreeggiisstteerr__aarrcchhiivvee__ffoorrmmaatt(name, function, extra_args=None, description='')
+        Registers an archive format.
+        
+        name is the name of the format. function is the callable that will be
+        used to create archives. If provided, extra_args is a sequence of
+        (name, value) tuples that will be passed as arguments to the callable.
+        description can be provided to describe the format, and will be returned
+        by the get_archive_formats() function.
+    
+    rreeggiisstteerr__uunnppaacckk__ffoorrmmaatt(name, extensions, function, extra_args=None, description='')
+        Registers an unpack format.
+        
+        `name` is the name of the format. `extensions` is a list of extensions
+        corresponding to the format.
+        
+        `function` is the callable that will be
+        used to unpack archives. The callable will receive archives to unpack.
+        If it's unable to handle an archive, it needs to raise a ReadError
+        exception.
+        
+        If provided, `extra_args` is a sequence of
+        (name, value) tuples that will be passed as arguments to the callable.
+        description can be provided to describe the format, and will be returned
+        by the get_unpack_formats() function.
+    
+    rrmmttrreeee(path, ignore_errors=False, onerror=None)
+        Recursively delete a directory tree.
+        
+        If ignore_errors is set, errors are ignored; otherwise, if onerror
+        is set, it is called to handle the error with arguments (func,
+        path, exc_info) where func is platform and implementation dependent;
+        path is the argument to that function that caused it to fail; and
+        exc_info is a tuple returned by sys.exc_info().  If ignore_errors
+        is false and onerror is None, an exception is raised.
+    
+    uunnppaacckk__aarrcchhiivvee(filename, extract_dir=None, format=None)
+        Unpack an archive.
+        
+        `filename` is the name of the archive.
+        
+        `extract_dir` is the name of the target directory, where the archive
+        is unpacked. If not provided, the current working directory is used.
+        
+        `format` is the archive format: one of "zip", "tar", "gztar", "bztar",
+        or "xztar".  Or any other registered format.  If not provided,
+        unpack_archive will use the filename extension and see if an unpacker
+        was registered for that extension.
+        
+        In case none is found, a ValueError is raised.
+    
+    uunnrreeggiisstteerr__aarrcchhiivvee__ffoorrmmaatt(name)
+    
+    uunnrreeggiisstteerr__uunnppaacckk__ffoorrmmaatt(name)
+        Removes the pack format from the registry.
+    
+    wwhhiicchh(cmd, mode=1, path=None)
+        Given a command, mode, and a PATH string, return the path which
+        conforms to the given mode on the PATH, or None if there is no such
+        file.
+        
+        `mode` defaults to os.F_OK | os.X_OK. `path` defaults to the result
+        of os.environ.get("PATH"), or can be overridden with a custom search
+        path.
+
+DDAATTAA
+    ____aallll____ = ['copyfileobj', 'copyfile', 'copymode', 'copystat', 'copy', ...
+
+FFIILLEE
+    /usr/lib64/python3.6/shutil.py
+

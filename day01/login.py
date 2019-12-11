@@ -1,0 +1,10 @@
+username = input('username= ')
+print('hello %s' % (username))
+print('welcome',username)
+print('welcome'+ username)
+print('welcome %s' % username)
+n = input('number: ')
+a = int(n) + 10
+b = n + str('10')
+print(a)
+print(b)
